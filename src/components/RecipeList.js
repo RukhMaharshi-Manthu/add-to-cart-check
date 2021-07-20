@@ -1,7 +1,8 @@
 
 import { useState } from "react";
+import "./styles.css";
+export default function RecipeList ({
 
-export default function RecipeList({
   recipeArr,
   initialRcpArr,
   rcpArr,
@@ -9,6 +10,7 @@ export default function RecipeList({
   cartMethod, 
         cart
 }) {
+  
   const [disable,setdisable]=useState(false);
   const [color,setcolor]=useState("orange");
   return (
@@ -45,12 +47,20 @@ export default function RecipeList({
 {/*name="rating"* /}
 <p>M.R.P- {ele.price}</p>
           {/* recipe extra details */}
-          <button className="addbtn" disabled={disable}  style={{"background-color":color}}
+          <button className="addbtn" disabled={disable}  
+          style={{"background-color":color,
+          width: "120px",
+  height: "30px",
+  border: "1px solid #ccc",
+  borderRadius:"4px",
+  outline: "none",
+  marginLeft: "45px",
+  marginBottom: "10px",
+  color: "white"}}
             onClick={() => {
-              rcpArr.filter((ele,index)=>setdisable(true))
-               
               
-              setcolor("rgb(224, 224, 209)")
+             
+              
               let match = cart.find((prod) => prod.ele === ele.name);
               // let match;
               // cart.forEach((prod) => {
@@ -62,6 +72,7 @@ export default function RecipeList({
               // console.log(match);
               if (match) {
                 let newArr = cart.map((prod) => {
+                  
                   if (prod.item === ele.name) {
                     // console.log(prod.item);
                     // console.log(prod.qty + 1);
@@ -69,6 +80,7 @@ export default function RecipeList({
                       ...prod,
 
                       qty: prod.qty + 1
+                     
                     };
                   } else {
                     return prod;
@@ -100,3 +112,4 @@ export default function RecipeList({
     </section>
   );
 }
+

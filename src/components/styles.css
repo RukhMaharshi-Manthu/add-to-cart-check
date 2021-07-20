@@ -44,6 +44,7 @@
 .card-header p {
   font-size: 1.2em;
 }
+
 .delete-btn {
   font-size: 0.5em;
 }
@@ -99,9 +100,8 @@ h5 {
   outline: none;
   margin-left: 45px;
   margin-bottom: 10px;
-  background-color: rgb(150, 9, 216);
-  color: white;
 }
+
 footer {
   padding: 1.1rem;
   font-size: 9px;
